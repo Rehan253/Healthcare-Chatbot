@@ -52,55 +52,6 @@ Once the dependencies are installed, you can run the code using any Python envir
 
 
 
-
-
-## Code
-
-import os
-import openai
-import gradio as gr
-
-openai.api_key = "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"
-
-start_sequence = "\nAI:"
-restart_sequence = "\nHuman: "
-
-prompt = "Ask me anything..."
-
-def openai_create(prompt):
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=prompt,
-        temperature=0.9,
-        max_tokens=150,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0.6,
-        stop=[" Human:", " AI:"]
-    )
-    return response.choices[0].text
-
-def chatgpt_clone(input, history):
-    history = history or []
-    s = list(sum(history, ()))
-    s.append(input)
-    inp = ' '.join(s)
-    output = openai_create(inp)
-    history.append((input, output))
-    return history, history
-
-block = gr.Blocks()
-
-with block:
-    gr.Markdown("""<h1><center>Healthcare</center></h1>""")
-    chatbot = gr.Chatbot()
-    message = gr.Textbox(placeholder=prompt)
-    state = gr.State()
-    submit = gr.Button("SEND")
-    submit.click(chatgpt_clone, inputs=[message, state], outputs=[chatbot, state])
-
-block.launch(debug=True)
-
 ## Demo
 
 To see the chatbot in action, visit this website and enter a prompt in the text box. The chatbot will generate a response based on the input prompt using the OpenAI API. The response will appear in the chatbot window.
