@@ -1,4 +1,3 @@
-````md
 # Healthcare Chatbot (Python + Gradio + OpenAI API)
 
 A simple healthcare Q&A chatbot web app built with **Python** and **Gradio**, using the **OpenAI API** to generate responses.
