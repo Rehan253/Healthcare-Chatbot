@@ -4,35 +4,7 @@
 A brief description of what this project does and who it's for
 
 
-## Table of Content
 
-
-
-* Overview
-* Solution approach
-* Documentation
-* Installation 
-
-* Code
-* Domo 
-* Deployment 
-
-* API References 
-* Environment Variables
-* Features 
-
-* Running Tests
-* Run Locally
-* Screenshot
-* Used By
-* Usage
-* Roadmap
-* Authors
-* Lessons Learned
-* Acknowledgements
-* FAQ
-* Feedback
- 
 ## Overview
 
 This is a simple chatbot application that uses OpenAI's GPT-3.5 language model to generate responses to user inputs. The model is trained on a large corpus of text and is capable of generating human-like responses to a wide variety of prompts.
